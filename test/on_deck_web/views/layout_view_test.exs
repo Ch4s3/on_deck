@@ -1,3 +1,3 @@
 defmodule OnDeckWeb.LayoutViewTest do
-  use OnDeckWeb.ConnCase, async: true
+  use ConnCase, async: true
 end

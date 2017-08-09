@@ -10,7 +10,9 @@ defmodule OnDeck.Mixfile do
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test]
     ]
   end
 
@@ -44,6 +46,8 @@ defmodule OnDeck.Mixfile do
       {:absinthe, "~> 1.3.1"},
       {:absinthe_plug, "~> 1.3.1"},
       {:absinthe_ecto, git: "https://github.com/absinthe-graphql/absinthe_ecto.git"},
+      {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
+      {:excoveralls, "~> 0.7", only: :test},
       {:faker, "~> 0.8.0"},
       {:plug_static_index_html, "~> 1.0"},
       {:sweet_xml, "~> 0.6.5"}

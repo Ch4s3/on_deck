@@ -1,6 +1,7 @@
 defmodule OnDeckWeb.BeerControllerTest do
-  use OnDeckWeb.ConnCase
+  use ConnCase
 
+  alias OnDeck.Repo
   alias OnDeck.Recipes
   alias OnDeck.Recipes.Beer
 

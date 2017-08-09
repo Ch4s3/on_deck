@@ -1,5 +1,7 @@
 # OnDeck
 
+[![Build Status](https://travis-ci.org/Ch4s3/on_deck.svg?branch=master)](https://travis-ci.org/Ch4s3/on_deck) [![Coverage Status](https://coveralls.io/repos/github/Ch4s3/on_deck/badge.svg?branch=master)](https://coveralls.io/github/Ch4s3/on_deck?branch=master)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`

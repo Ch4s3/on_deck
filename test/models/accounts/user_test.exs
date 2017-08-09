@@ -3,7 +3,7 @@ defmodule OnDeck.Accounts.UserTest do
 
   alias OnDeck.Accounts.User
 
-  @valid_attrs %{email: "some email", name: "some name", uuid: "7488a646-e31f-11e4-aace-600308960662"}
+  @valid_attrs %{email: "some@email.com", name: "some name"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
