@@ -24,5 +24,12 @@ defmodule OnDeckWeb.Router do
     pipe_through :api
 
     resources "/users", UserController, except: [:new, :edit, :show]
+    resources "/beers", BeerController, except: [:new, :edit, :show]
   end
+
+  forward "/graph", Absinthe.Plug,
+    schema: OnDeck.Schema
+
+  forward "/graphiql", Absinthe.Plug.GraphiQL,
+    schema: OnDeck.Schema
 end

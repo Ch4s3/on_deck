@@ -42,7 +42,11 @@ defmodule OnDeck.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:absinthe, "~> 1.3.1"},
-      {:plug_static_index_html, "~> 1.0"}
+      {:absinthe_plug, "~> 1.3.1"},
+      {:absinthe_ecto, git: "https://github.com/absinthe-graphql/absinthe_ecto.git"},
+      {:faker, "~> 0.8.0"},
+      {:plug_static_index_html, "~> 1.0"},
+      {:sweet_xml, "~> 0.6.5"}
     ]
   end
 
