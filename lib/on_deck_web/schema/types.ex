@@ -43,6 +43,8 @@ defmodule OnDeck.Schema.Types do
     field :volume_in_liters, :float
     @desc "Rating from 0 to 100"
     field :rating, :float
+    @desc "Is the beer currently on tap"
+    field :on_tap, :boolean
     field :user, :user, resolve: assoc(:users)
   end
 

@@ -15,6 +15,6 @@ defmodule OnDeck.Schema do
     field :beer, type: :beer do
       arg :id, non_null(:id)
       resolve &OnDeck.Recipes.BeerResolver.one/2
-    end
+    end 
   end
 end

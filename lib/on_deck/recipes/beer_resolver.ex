@@ -1,5 +1,5 @@
 defmodule OnDeck.Recipes.BeerResolver do
-  alias OnDeck.{Recipes.Beer, Repo}
+  alias OnDeck.{Recipes, Recipes.Beer, Repo}
 
   def all(_args, _info) do
     {:ok, Repo.all(Beer)}

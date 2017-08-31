@@ -9,6 +9,7 @@ for _ <- 1..10 do
     {abv, _} = Float.parse "#{:rand.uniform(10)}.#{:rand.uniform(9)}"
     {og, _} = Float.parse "1.0#{:rand.uniform(7)}#{:rand.uniform(9)}"
     {fg, _} = Float.parse "1.0#{:rand.uniform(2)}#{:rand.uniform(4)}"
+    on_tap = :rand.uniform(2) |> (fn(x) -> if x == 1, do: true, else: false end).()
     Recipes.create_beer(user,
       %{abv: abv,
         boil_time: :rand.uniform(120),
@@ -23,7 +24,9 @@ for _ <- 1..10 do
         rating: :rand.uniform(100),
         srm: :rand.uniform(70),
         style: Faker.Lorem.word,
-        volume_in_liters: :rand.uniform(44)}
+        volume_in_liters: :rand.uniform(44),
+        on_tap: on_tap
+      }
     )
   end
 end
