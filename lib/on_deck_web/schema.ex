@@ -8,9 +8,10 @@ defmodule OnDeck.Schema do
       resolve &OnDeck.Accounts.UserResolver.one/2
     end
 
-    field :beers, list_of(:beer) do
-      resolve &OnDeck.Recipes.BeerResolver.all/2
-    end
+    # field :beers, list_of(:beer) do
+    #   arg :on_tap, :boolean
+    #   resolve &OnDeck.Recipes.BeerResolver.all/2
+    # end
 
     field :beer, type: :beer do
       arg :id, non_null(:id)
