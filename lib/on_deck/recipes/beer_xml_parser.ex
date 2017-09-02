@@ -12,12 +12,12 @@ defmodule OnDeck.Recipes.BeerXmlParser do
         time: '45.0000000'}
   """
   @spec parse(String.t) :: {:ok, %{}} | {:error, String.t}
-  def parse(_xml_string = ""), do: {:error, "No XML present"}
-  def parse(_xml_string = nil), do: {:error, "No XML present"}
+  def parse(""), do: {:error, "No XML present"}
+  def parse(nil), do: {:error, "No XML present"}
   def parse(xml_string) do
     xml_string
       |> build_ingredients_list
-  end 
+  end
   def build_ingredients_list(xml_string) do
     try do
       {:ok,
@@ -37,9 +37,9 @@ defmodule OnDeck.Recipes.BeerXmlParser do
   end
 
   def get_hops(xml) do
-    xml 
-    |> xpath(~x"/RECIPES/RECIPE/HOPS/HOP"l, 
-        name: ~x"NAME/text()", 
+    xml
+    |> xpath(~x"/RECIPES/RECIPE/HOPS/HOP"l,
+        name: ~x"NAME/text()",
         origin: ~x"ORIGIN/text()",
         alpha: ~x"ALPHA/text()",
         ammount: ~x"AMMOUNT/text()",
@@ -50,7 +50,7 @@ defmodule OnDeck.Recipes.BeerXmlParser do
   end
 
   def get_fermentables(xml) do
-    xml 
+    xml
     |> xpath(~x"/RECIPES/RECIPE/FERMENTABLES/FERMENTABLE"l,
         name: ~x"NAME/text()",
         type: ~x"TYPE/text()",
@@ -63,7 +63,7 @@ defmodule OnDeck.Recipes.BeerXmlParser do
   end
 
   def get_yeasts(xml) do
-    xml 
+    xml
       |> xpath(~x"/RECIPES/RECIPE/YEASTS/YEAST"l,
           name: ~x"NAME/text()",
           type: ~x"TYPE/text()",
