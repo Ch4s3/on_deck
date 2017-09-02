@@ -43,6 +43,8 @@ defmodule OnDeck.Schema.Types do
     field :volume_in_liters, :float
     @desc "Rating from 0 to 100"
     field :rating, :float
+    @desc "Is the beer currently on tap"
+    field :on_tap, :boolean
     field :user, :user, resolve: assoc(:users)
   end
 
@@ -51,6 +53,12 @@ defmodule OnDeck.Schema.Types do
     field :name, :string
     field :email, :string
     field :uuid, :string
-    field :beers, list_of(:beer), resolve: assoc(:beers)
+    field :beers, list_of(:beer) do
+      @desc "Boolean value expressing whether or not the user currently has this beer on tap"
+      arg :on_tap, :boolean
+      resolve assoc(:beers, fn beers_query, args, _ ->
+        OnDeck.Recipes.BeerResolver.on_tap(beers_query, args, "")
+      end)
+    end
   end
 end

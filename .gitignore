@@ -18,3 +18,5 @@ erl_crash.dump
 /priv/static
 /deck-js/node_modules
 deck-js/build
+
+.env

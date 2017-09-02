@@ -1,5 +1,5 @@
 defmodule OnDeck.Accounts.UserControllerTest do
-  use OnDeck.ConnCase
+  use ConnCase
 
   alias OnDeck.Accounts.User
   @valid_attrs %{email: "some email", name: "some name", uuid: "7488a646-e31f-11e4-aace-600308960662"}

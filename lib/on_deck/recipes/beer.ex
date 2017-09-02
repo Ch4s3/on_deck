@@ -19,6 +19,7 @@ defmodule OnDeck.Recipes.Beer do
     field :srm, :float
     field :style, :string
     field :volume_in_liters, :float
+    field :on_tap, :boolean
     belongs_to :user, OnDeck.Accounts.User
 
     timestamps()
@@ -27,7 +28,7 @@ defmodule OnDeck.Recipes.Beer do
   @doc false
   def changeset(%Beer{} = beer, attrs) do
     beer
-    |> cast(attrs, [:name, :description, :style, :ingredients, :abv, :estimated_ibu, :srm, :measured_original_gravity, :measured_final_gravity, :boil_time, :brew_date, :bottle_or_keg_date, :volume_in_liters, :rating, :user_id])
-    |> validate_required([:name, :description, :style, :ingredients, :abv, :estimated_ibu, :srm, :measured_original_gravity, :measured_final_gravity, :boil_time, :brew_date, :bottle_or_keg_date, :volume_in_liters, :rating])
+    |> cast(attrs, [:name, :description, :style, :ingredients, :abv, :estimated_ibu, :srm, :measured_original_gravity, :measured_final_gravity, :boil_time, :brew_date, :bottle_or_keg_date, :volume_in_liters, :rating, :on_tap, :user_id])
+    |> validate_required([:name, :description, :style, :ingredients, :abv, :estimated_ibu, :srm, :measured_original_gravity, :measured_final_gravity, :boil_time, :brew_date, :bottle_or_keg_date, :volume_in_liters, :rating, :on_tap])
   end
 end

@@ -1,5 +1,5 @@
 defmodule OnDeckWeb.UserControllerTest do
-  use OnDeckWeb.ConnCase
+  use ConnCase
 
   alias OnDeck.Accounts
   alias OnDeck.Accounts.User

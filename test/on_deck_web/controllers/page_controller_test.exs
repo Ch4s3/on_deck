@@ -1,5 +1,5 @@
 defmodule OnDeckWeb.PageControllerTest do
-  use OnDeckWeb.ConnCase
+  use ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
