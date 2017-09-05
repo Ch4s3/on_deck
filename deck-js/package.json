@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "eslint src && preact test",
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build --dest ../priv/static",
+    "start": "if-env NODE_ENV=production &n -s serve || npm run -s dev",
+    "build": "preact build --clean -p --dest ../priv/static",
     "serve": "preact build && preact serve",
-    "dev": "preact watch"
+    "watch": "preact watch"
   },
   "keywords": [],
   "author": "",
