@@ -2,16 +2,11 @@ import { h, Component } from 'preact';
 import { createApolloFetch } from 'apollo-fetch';
 import style from './style';
 
-export default class Profile extends Component {
+export default class Brewer extends Component {
 	state = {
 		time: Date.now(),
-		count: 10,
 		userName: "",
 		beerCount: 0,
-	};
-
-	increment = () => {
-		this.setState({ count: this.state.count+1 });
 	};
 
 	// update the current time
@@ -84,19 +79,14 @@ export default class Profile extends Component {
 	}
 
 	// Note: `user` comes from the URL, courtesy of our router
-	render({ user }, { time, count, userName, beerCount }) {
+	render({ user }, { time, userName, beerCount }) {
 		return (
-			<div class={style.profile}>
-				<h1>Profile: {userName}</h1>
-				<p>This is the user profile for a user named {userName}.</p>
+			<div class={style.brewer}>
+				<h1>Brewer: {userName}</h1>
+				<p>This is the brewer profile for a user named {userName}.</p>
 
 				<div>Current time: {new Date(time).toLocaleString()}</div>
 				<div>beers on tap: {beerCount}</div>
-				<p>
-					<button onClick={this.increment}>Click Me</button>
-					{' '}
-					Clicked {count} times.
-				</p>
 			</div>
 		);
 	}
