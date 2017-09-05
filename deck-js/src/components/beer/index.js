@@ -18,7 +18,8 @@ export default class Beer extends Component {
         <ul style={ulStyle}>
           <li style={liStyle}> Style: {beer.style} </li>
           <li style={liStyle}> Abv: {beer.abv} </li>
-          <li style={liStyle}> Style: {beer.style} </li>
+          <li style={liStyle}> IBU: {beer.estimatedIbu} </li>
+          <li style={liStyle}> OG: {beer.measuredOriginalGravity} </li>
         </ul>
       </div>
     );
