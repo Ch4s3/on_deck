@@ -12,6 +12,7 @@ export default class BeerList extends Component {
       background: 'rgba(250,250,250,0.5)',
       boxShadow: '0 1px 5px rgba(0,0,0,0.5)',
     };
+
     return (
       <div>
         {beers.map(beer => (

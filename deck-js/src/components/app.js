@@ -4,6 +4,7 @@ import { Router } from 'preact-router';
 import Header from './header';
 import Home from '../routes/home';
 import Brewer from '../routes/brewer';
+import Redirect from '../routes/redirect';
 // import Home from 'async!./home';
 // import Brewer from 'async!./brewer';
 
@@ -23,8 +24,8 @@ export default class App extends Component {
 				<Header />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
-					<Brewer path="/brewer/" user="me" />
-					<Brewer path="/brewer/:user" />
+					<Redirect path="/brewer" to="/" />
+					<Brewer path="/brewer/:uuid" />
 				</Router>
 			</div>
 		);
