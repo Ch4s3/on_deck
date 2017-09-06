@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { createApolloFetch } from 'apollo-fetch';
-import Beer from '../../components/beer';
+import BeerList from '../../components/beer_list';
 import style from './style';
 
 export default class Brewer extends Component {
@@ -15,14 +15,6 @@ export default class Brewer extends Component {
 	updateTime = () => {
 		this.setState({ time: Date.now() });
 	};
-
-	buildBeers = () => {
-		if (this.state.beers) {
-			return(
-				this.state.beers.map(beer => <Beer beer={beer}/> )
-			);
-		}
-	}
 
 	parseData = (data) => {
 		const user = data.user
@@ -89,7 +81,7 @@ export default class Brewer extends Component {
 	}
 
 	// Note: `user` comes from the URL, courtesy of our router
-	render({ user }, { time, userName, beerCount }) {
+	render({ user }, { time, userName, beerCount, beers }) {
 		return (
 			<div class={style.brewer}>
 				<h1>Brewer: {userName}</h1>
@@ -97,7 +89,7 @@ export default class Brewer extends Component {
 
 				<div>Current time: {new Date(time).toLocaleString()}</div>
 				<div>beers on tap: {beerCount}</div>
-				{this.buildBeers()}
+				<BeerList beers={beers}/>
 			</div>
 		);
 	}
