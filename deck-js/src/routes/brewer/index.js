@@ -11,12 +11,14 @@ export default class Brewer extends Component {
 	};
 
 	parseData = (data) => {
-		const user = data.user
-		this.setState({
-			userName: user.name,
-			beerCount: user.beers.length,
-			beers: user.beers
-		});
+		if(data){
+			const user = data.user
+			this.setState({
+				userName: user.name,
+				beerCount: user.beers.length,
+				beers: user.beers
+			});
+		}
 	}
 	
 	// gets called when this route is navigated to
@@ -25,10 +27,9 @@ export default class Brewer extends Component {
 		const apolloFetch = createApolloFetch({ uri });
 
 		const query = `
-			query userBeers($id: ID!, $onTap: Boolean) {
-				user(id: $id){
+			query userBeers($uuid: String!, $onTap: Boolean) {
+				user(uuid: $uuid){
 					name
-					id
 					uuid
 					beers(onTap: $onTap){
 						id
@@ -52,7 +53,7 @@ export default class Brewer extends Component {
 		`;
 		
 		const variables = {
-			id: this.props.uuid,
+			uuid: this.props.uuid,
 			onTap: true,
 		};
 

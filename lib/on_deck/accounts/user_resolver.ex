@@ -6,7 +6,7 @@ defmodule OnDeck.Accounts.UserResolver do
   end
 
   def one(args, _info) do
-    id = String.to_integer(args.id)
-    {:ok, Accounts.get_user!(id)}
+    uuid = args.uuid
+    {:ok, Accounts.get_user!(uuid)}
   end
 end
