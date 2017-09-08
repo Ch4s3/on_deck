@@ -46,6 +46,7 @@ defmodule OnDeck.Mixfile do
       {:absinthe, "~> 1.3.1"},
       {:absinthe_plug, "~> 1.3.1"},
       {:absinthe_ecto, git: "https://github.com/absinthe-graphql/absinthe_ecto.git"},
+      {:cors_plug, "~> 1.2"},
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.7", only: :test},
       {:faker, "~> 0.8.0"},

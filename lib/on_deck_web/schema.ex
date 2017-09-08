@@ -4,7 +4,7 @@ defmodule OnDeck.Schema do
 
   query do
     field :user, type: :user do
-      arg :id, non_null(:id)
+      arg :uuid, non_null(:string)
       resolve &OnDeck.Accounts.UserResolver.one/2
     end
 

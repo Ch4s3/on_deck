@@ -41,6 +41,8 @@ defmodule OnDeckWeb.Endpoint do
     key: "_on_deck_key",
     signing_salt: "YDQP4iS4"
 
+  plug CORSPlug, origin: ["*"]
+
   plug OnDeckWeb.Router
 
   @doc """

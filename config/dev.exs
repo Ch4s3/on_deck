@@ -11,7 +11,7 @@ config :on_deck, OnDeckWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: []
+  watchers: [bash: ["./dev_runner.sh", cd: Path.expand("../deck-js", __DIR__)]]
 
 # ## SSL Support
 #
